@@ -1,14 +1,12 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import NavBar from './NavBar';
 
-const Home = React.lazy(() => {
-    return new Promise(resolve => setTimeout(resolve, 5 * 1000)).then(
-        () => 
-
-            Math.floor(Math.random() * 100) >= 4 
-            ? import('./Show') 
-            : Promise.reject(new Error())
-        );
-    
-});
+const Home = () => {
+    return (
+        <Fragment>
+            <NavBar />
+        </Fragment>
+    );
+}
  
 export default Home;

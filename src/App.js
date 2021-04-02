@@ -1,23 +1,22 @@
 import React, {Suspense} from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Loader from './components/Loader';
-
-const Quiz = React.lazy(() => {
-  return new Promise(resolve => setTimeout(resolve, 5 * 1000)).then(
-      () => 
-
-          Math.floor(Math.random() * 100) >= 4 
-          ? import('./components/Quiz') 
-          : null
-      ); // Simulate a time to load
-  
-});
+import LazyForm from './components/LazyForm';
+import Home from './components/Home';
 
 function App() {
   return (
-    
-      <Suspense fallback={<Loader />}>
-        <Quiz />        
-      </Suspense>
+    <Router>
+        <Suspense fallback={<Loader />}>
+        
+        <Switch>
+          <Route exact path="/" component={LazyForm} />
+          <Route exact path="/home" component={Home} />
+        </Switch>
+        
+        </Suspense>
+    </Router>
+      
   );
 }
 

@@ -1,5 +1,7 @@
-html {
-  height: 100vh;
+html, body {
+  height: 100%;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
 }
 
 body {
@@ -63,4 +65,35 @@ code {
   background-color: rgb(78, 85, 133, 0.6);
   color: rgb(255, 255, 255);
   border-radius: 0px 0px 20px 20px;
+}
+
+.gradient {
+  background: rgb(127,97,167);
+  background: linear-gradient(
+    90deg, 
+  rgba(127,97,167,1) 52%, 
+  rgb(136, 92, 197) 100%, 
+  rgb(179, 122, 233) 100%, 
+  rgba(236,236,236,1) 100%
+  );
+}
+
+.page-header {
+  margin-top: 5rem;
+  font-size: 1.25rem;
+  color: #fff;
+
+}
+
+.btn-dark {
+  color:rgb(31, 31, 31);
+  background-color: rgba(132, 98, 177, 0.3);
+  border-color: #48375e;
+  font-weight: 548;
+}
+
+.btn-dark:hover {
+  color: rgb(230, 230, 230);
+  background-color: #48375e;
+  border-color: #48375e;
 }

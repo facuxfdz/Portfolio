@@ -17,7 +17,7 @@ const Form1 = () => {
             <div className="col-md-6 p-2">
                 <div className="card card-block mx-auto w-75 text-center p-5">
 
-                    <h3 className="mb-4">Cual es tu nombre?</h3>
+                    <h3 className="mb-4">Hi! Type your name below and let's get to know me</h3>
                     <div className="form-floating mb-3">
                         <input 
                             type="text" 
@@ -26,13 +26,13 @@ const Form1 = () => {
                             id="floatingInput"
                             onChange={changeName}    
                         />
-                        <label for="floatingInput">Nombre</label>
+                        <label for="floatingInput">Name</label>
                     </div>
 
                     
                         {(nameIsEmpty.trim() === '')
-                            ?   <button type="button" className="btn btn-primary" disabled>Continuar</button>
-                            :   <Link to={"/home"} className="btn btn-primary">Continuar</Link>
+                            ?   <button type="button" className="btn btn-primary" disabled>Continue</button>
+                            :   <Link to={"/home"} className="btn btn-primary">Continue</Link>
 
                         }
                     

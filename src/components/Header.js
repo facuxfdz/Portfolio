@@ -2,11 +2,10 @@ import React from 'react'
 
 const Header = () => {
     return (
-        
             <header className="page-header gradient">
                 <div className="container pt-3 pb-3">
                     <div className="row align-items-center justify-content-center">
-                        <div className="col-md-5">
+                        <div className="col-md-6">
                             <h2>My portfolio website</h2>
 
                             <p>
@@ -14,15 +13,8 @@ const Header = () => {
 
                             </p>
 
-                            <button 
-                                type="button" 
-                                className="btn btn-dark btn-lg dark-mode-toggle"
-                            >
-                                Dark mode 
-                            </button>
-
                         </div>
-                        <div className="col-md-5">
+                        <div className="col-md-6 text-center">
                             <img src="admin-image.png" />
                         </div>
                     </div>

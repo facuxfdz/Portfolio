@@ -3,9 +3,9 @@ import React from 'react'
 const Header = () => {
     return (
             <header className="page-header gradient">
-                <div className="container pt-3 pb-3">
+                <div className="container pt-3 pb-1">
                     <div className="row align-items-center justify-content-center">
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-5">
                             <h2>My portfolio website</h2>
 
                             <p>

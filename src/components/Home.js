@@ -28,7 +28,10 @@ const Home = () => {
         let projects = [
             "https://github.com/facuxfdz/redux-CRUD",
             "https://github.facuxfdzPet-Lost-Server",
-            "https://github.com/facuxfdz/MERN-Tasks-Client"
+            "https://github.com/facuxfdz/MERN-Tasks-Client",
+            "https://github.com/facuxfdz/MERN-Tasks-Client",
+            "https://github.com/facuxfdz/MERN-Tasks-Client",
+            "https://github.com/facuxfdz/MERN-Tasks-Client",
         ]; 
         return {className,title,description,projects};
     };

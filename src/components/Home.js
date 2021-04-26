@@ -28,8 +28,8 @@ const Home = () => {
         let title = "Projects";
         let description = "These are my personal projects";
         let projects = [
-            "https://github.com/facuxfdz/redux-CRUD",
-            "https://github.facuxfdzPet-Lost-Server",
+            {"url": "https://github.com/facuxfdz/redux-CRUD", "index": 1},
+            {"url": "https://github.facuxfdzPet-Lost-Server", "index": 2},
         ]; 
         return {className,title,description,projects};
     };
@@ -44,56 +44,64 @@ const Home = () => {
                 "passedYear": 2018,
                 "grade": 9,
                 "promoted": true,
-                "finalExam": true
+                "finalExam": true,
+                "index": 1
             },
             {
                 "name": "Analisis Matemático 1",
                 "passedYear": 2018,
                 "grade": 6,
                 "promoted": false,
-                "finalExam": true     
+                "finalExam": true,
+                "index": 2     
             },
             {
                 "name": "Algoritmos y Estructura de Datos",
                 "passedYear": 2020,
                 "grade": 9,
                 "promoted": true,
-                "finalExam": true     
+                "finalExam": true,
+                "index": 3     
             },
             {
                 "name": "Ingeniería y Sociedad",
                 "passedYear": 2020,
                 "grade": 9,
                 "promoted": true,
-                "finalExam": true     
+                "finalExam": true,
+                "index": 4     
             },
             {
                 "name": "Álgebra y Geometría Analítica",
                 "passedYear": 2020,
                 "grade": 9,
                 "promoted": true,
-                "finalExam": true     
+                "finalExam": true,
+                "index": 5     
             },
             {
                 "name": "Sistemas y Organizaciones",
                 "passedYear": 2020,
                 "grade": 10,
                 "promoted": true,
-                "finalExam": true     
+                "finalExam": true,
+                "index": 6     
             },
             {
                 "name": "Física 1",
                 "passedYear": 2020,
                 "grade": 6,
                 "promoted": false,
-                "finalExam": false     
+                "finalExam": false,
+                "index": 7     
             },
             {
                 "name": "Matemática Discreta",
                 "passedYear": 2020,
                 "grade": 7,
                 "promoted": false,
-                "finalExam": false     
+                "finalExam": false,
+                "index": 8     
             }
         ]; 
         let inProgressSubjects = [
@@ -101,37 +109,43 @@ const Home = () => {
                 "name": "Arquitectura de computadores",
                 "day": "Monday",
                 "from": "19:00 hs",
-                "to": "22:00 hs"
+                "to": "22:00 hs",
+                "index": 1
             },
             {
                 "name": "Análisis de Sistemas",
                 "day": "Tuesday",
                 "from": "08:00 hs",
-                "to": "11:00 hs"     
+                "to": "11:00 hs",
+                "index": 2     
             },
             {
                 "name": "Sintaxis y Semántica de los Lenguajes",
                 "day": "Tuesday",
                 "from": "13:30 hs",
-                "to": "16:30 hs"
+                "to": "16:30 hs",
+                "index": 3
             },
             {
                 "name": "Análisis Matemático 2",
                 "day": "Wednesday",
                 "from": "19:00 hs",
-                "to": "21:30 hs"
+                "to": "21:30 hs",
+                "index": 4
             },
             {
                 "name": "Paradigmas de Programación",
                 "day": "Thursday",
                 "from": "08:00 hs",
-                "to": "12:30 hs"
+                "to": "12:30 hs",
+                "index": 5
             },
             {
                 "name": "Probabilidad y Estadística",
                 "day": "Thursday",
                 "from": "19:00 hs",
-                "to": "21:30 hs"
+                "to": "21:30 hs",
+                "index": 6
             }
         ];
 

@@ -96,9 +96,37 @@ code {
 
 .projects ul li {
   padding-left: 2rem;
-  background-repeat: no-repeat;
-  background-size: 1.2rem;
   line-height: 1.5rem;
   margin-bottom: 1rem;
   
+}
+
+.formation ul li {
+  list-style-image: url(wrench.svg);
+}
+
+.formation ul li a {
+  text-decoration: none;
+}
+
+.link-success {
+  color:rgb(136, 92, 197);
+}
+
+.link-success:hover {
+  color:rgb(101, 74, 141);
+}
+
+.link-success:focus {
+  color:rgb(77, 61, 100);
+}
+
+.link-success-violet-background {
+  text-decoration: none;
+  color:rgb(233, 225, 241)
+}
+
+
+.link-success-violet-background:hover {
+  color:rgb(220, 184, 255)
 }

@@ -27,7 +27,7 @@ const Projects = ({projectsData}) => {
                                 {projects.map(project => {
                                     return ( 
                                         <li key={project.index} className="my-4"> 
-                                            <a href="#" className=""> 
+                                            <a href="#!" className="link-success-violet-background"> 
                                                 <img className="mx-3 my-2" src="GitHub-Mark-64px.png" />
                                                 {project.url} 
                                             </a>

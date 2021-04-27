@@ -18,7 +18,7 @@ const Formation = ({formationData}) => {
         <section className={`${formationData.className}`}>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-12 text-center">
+                    <div className="col-md-12 text-center mb-5">
                         <h1>{formationData.title}</h1>
                         <p>
                             {formationData.universityData.name}

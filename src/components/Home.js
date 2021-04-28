@@ -128,7 +128,7 @@ const Home = () => {
             },
             {
                 "name": "Análisis Matemático 2",
-                "day": "Wednesday",
+                "day": "Wednesday-Friday",
                 "from": "19:00 hs",
                 "to": "21:30 hs",
                 "index": 4

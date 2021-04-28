@@ -13,7 +13,7 @@ const PassedSubjectData = ({selectedSubject}) => {
                     </div> 
               ) 
                 : ( 
-                    <div class="alert alert-secondary text-center" role="alert">
+                    <div class="alert alert alert-warning text-center" role="alert">
                         This subject is not promoted yet
                     </div>
                 )

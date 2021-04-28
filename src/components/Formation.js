@@ -1,17 +1,28 @@
 import React, { useState } from 'react'
 import PassedSubjectData from './PassedSubjectData';
 import PassedSubject from './PassedSubject';
+import InProgressSubject from './InProgressSubject';
+import InProgressSubjectData from './InProgressSubjectData';
 
 const Formation = ({formationData}) => {
 
     const [showPassedSubjectData,handleShowPassedSubjectData] = useState(false);
     const [selectedSubject,handleSelectedSubject] = useState({});
+    const [showInProgressSubjectData,handleShowInProgressSubjectData] = useState(false);
 
+    
     const handlePassedSubjectsClick = passedSubject => {
+        handleShowInProgressSubjectData(false);
         handleShowPassedSubjectData(true);
         handleSelectedSubject(passedSubject);
     }
     
+    const handleInProgressSubjectsClick = inProgressSubject => {
+        handleShowPassedSubjectData(false);
+        handleShowInProgressSubjectData(true);
+        handleSelectedSubject(inProgressSubject);
+
+    }
     if(Object.keys(formationData).length === 0) return null;
     
     return (
@@ -38,7 +49,19 @@ const Formation = ({formationData}) => {
                                 />
                             ))}
                         </ul>
+
+                        <h2>Non-Passed subjects</h2>
+                        <ul>
+                            {formationData.inProgressSubjects.map(inProgressSubject => (
+                                <InProgressSubject 
+                                    inProgressSubject={inProgressSubject}
+                                    handleInProgressSubjectsClick={handleInProgressSubjectsClick}
+                                    key={inProgressSubject.index}
+                                />
+                            ))}
+                        </ul>
                     </div>
+
                     <div className="col-md-6">
                                 {showPassedSubjectData 
                                     ? (
@@ -46,7 +69,16 @@ const Formation = ({formationData}) => {
                                     ) 
                                     : null
                                 }
+                                {showInProgressSubjectData
+                                    ? (
+                                        <InProgressSubjectData 
+                                            selectedSubject={selectedSubject}
+                                        />
+                                    )
+                                    : null
+                                }
                     </div>
+                    
                 </div>
             </div>
         </section>

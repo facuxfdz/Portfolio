@@ -101,31 +101,56 @@ code {
   
 }
 
-.formation ul li {
-  list-style-image: url(wrench.svg);
+.promoted-subject {
+  list-style-image: url(check.svg);
+}
+
+.promoted-subject a {
+  transition: all 0.3s ease-in-out;
+}
+
+.promoted-subject a:hover {
+  padding-left: 2rem;
+}
+
+.non-promoted-subject {
+  list-style-image: url(warning.svg);
+  transition: all 0.3s ease-in-out;
+
+}
+
+.non-promoted-subject a {
+  transition: all 0.3s ease-in-out;
+}
+
+.non-promoted-subject a:hover {
+  padding-left: 2rem;
 }
 
 .formation ul li a {
   text-decoration: none;
 }
 
-.link-success {
+.link-current-data {
   color:rgb(136, 92, 197);
 }
 
-.link-success:hover {
+.link-current-data:hover {
   color:rgb(101, 74, 141);
 }
 
-.link-success:focus {
-  color:rgb(77, 61, 100);
+.link-success {
+  color: rgb(11, 151, 11);
+}
+
+.link-success:hover {
+  color: rgb(7, 105, 7);
 }
 
 .link-success-violet-background {
   text-decoration: none;
   color:rgb(233, 225, 241)
 }
-
 
 .link-success-violet-background:hover {
   color:rgb(220, 184, 255)

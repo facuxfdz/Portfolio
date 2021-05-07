@@ -166,9 +166,9 @@ const Home = () => {
         <Fragment>
             <NavBar />
             <Header />
-            <About aboutData={aboutData}/>
-            <Projects projectsData={projectsData}/>
-            <Formation formationData={formationData}/>
+            <About id="about" aboutData={aboutData}/>
+            <Projects id="projects" projectsData={projectsData}/>
+            <Formation id="formation" formationData={formationData}/>
         </Fragment>
     );
 }

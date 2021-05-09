@@ -26,7 +26,8 @@ const Formation = ({formationData}) => {
     if(Object.keys(formationData).length === 0) return null;
     
     return (
-        <section className={`${formationData.className}`}>
+        <section title="formation" className={`${formationData.className} my-5`}>
+            
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 text-center mb-5">

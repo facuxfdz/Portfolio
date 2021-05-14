@@ -26,7 +26,7 @@ const Form1 = () => {
                             id="floatingInput"
                             onChange={changeName}    
                         />
-                        <label for="floatingInput">Name</label>
+                        <label htmlFor="floatingInput">Name</label>
                     </div>
 
                     

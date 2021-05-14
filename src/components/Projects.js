@@ -25,7 +25,7 @@ const Projects = ({projectsData}) => {
                                 {projects.map(project => {
                                     return (
                                       
-                                        <Carousel.Item>
+                                        <Carousel.Item key={project.index}>
                                         <a href="#!" className="link-success-violet-background"> 
                                         <img className="mx-3 my-2" src="GitHub-Mark-64px.png" />
                                         {project.url} 

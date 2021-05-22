@@ -1,15 +1,33 @@
-import React from 'react'
+import React, {useEffect,useState} from 'react'
+import axios from 'axios';
 
-const About = ({aboutData}) => {
+const About = () => {
+
+    const [aboutInfo,handleInfo] = useState('');
+    
+    useEffect(() => {
+        callAPI();
+    },[]);
+
+    const callAPI = async () => {
+        const res = await axios.get(process.env.REACT_APP_BACKEND_OWNER_URL);
+        handleInfo(res.data.ownerInfo.aboutInfo);
+    }
+
     return ( 
-        <section title="about" className={`${aboutData.className}`}>
+        <section title="about" className='about gradient'>
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 text-center mt-5">
-                        <h1 className="text-white">{aboutData.title}</h1>
-                        <p className="mt-5 text-white">
-                            {aboutData.description}
-                        </p>
+                        <h1 className="text-white">About me</h1>
+                        {aboutInfo
+                            ? (
+                                <p className="mt-5 text-white">
+                                    {aboutInfo}
+                                </p>
+                            )
+                            : null
+                        }
                     </div>
                 </div>
             </div>

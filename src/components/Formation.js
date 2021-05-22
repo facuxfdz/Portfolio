@@ -1,10 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PassedSubjectData from './PassedSubjectData';
 import PassedSubject from './PassedSubject';
 import InProgressSubject from './InProgressSubject';
 import InProgressSubjectData from './InProgressSubjectData';
+import axios from 'axios';
 
-const Formation = ({formationData}) => {
+const Formation = () => {
+
+    const [formationInfo,handleInfo] = useState('');
+    
+    useEffect(() => {
+        callAPI();
+    },[]);
+
+    const callAPI = async () => {
+        const res = await axios.get(process.env.REACT_APP_BACKEND_OWNER_URL);
+        handleInfo(res.data.ownerInfo.formationInfo);
+    }
+
 
     const [showPassedSubjectData,handleShowPassedSubjectData] = useState(false);
     const [selectedSubject,handleSelectedSubject] = useState({});
@@ -23,18 +36,16 @@ const Formation = ({formationData}) => {
         handleSelectedSubject(inProgressSubject);
 
     }
-    if(Object.keys(formationData).length === 0) return null;
+    if(Object.keys(formationInfo).length === 0) return null;
     
     return (
-        <section title="formation" className={`${formationData.className} my-5`}>
+        <section title="formation" className='formation my-5'>
             
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 text-center mb-5">
-                        <h1>{formationData.title}</h1>
-                        <p>
-                            {formationData.universityData.name}
-                        </p>
+                        <h1>Formation</h1>
+                        <p>{formationInfo.universityData.name}</p>
                     </div>
                 </div>
 
@@ -42,22 +53,22 @@ const Formation = ({formationData}) => {
                     <div className="col-md-6">
                         <h2>Passed subjects</h2>
                         <ul>
-                            {formationData.passedSubjects.map(passedSubject => (
+                            {formationInfo.passedSubjects.map(passedSubject => (
                                 <PassedSubject 
                                     passedSubject={passedSubject}
                                     handlePassedSubjectsClick={handlePassedSubjectsClick} 
-                                    key={passedSubject.index}
+                                    key={passedSubject._id}
                                 />
                             ))}
                         </ul>
 
-                        <h2>Non-Passed subjects</h2>
+                        <h2>In progress subjects</h2>
                         <ul>
-                            {formationData.inProgressSubjects.map(inProgressSubject => (
+                            {formationInfo.inProgressSubjects.map(inProgressSubject => (
                                 <InProgressSubject 
                                     inProgressSubject={inProgressSubject}
                                     handleInProgressSubjectsClick={handleInProgressSubjectsClick}
-                                    key={inProgressSubject.index}
+                                    key={inProgressSubject._id}
                                 />
                             ))}
                         </ul>

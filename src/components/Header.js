@@ -2,18 +2,32 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
 const Header = () => {
+    const [headerInfo,handleInfo] = useState('');
     
+    useEffect(() => {
+        callAPI();
+    },[]);
+
+    const callAPI = async () => {
+        const res = await axios.get(process.env.REACT_APP_BACKEND_OWNER_URL);
+        handleInfo(res.data.ownerInfo.headerInfo);
+    }
+
     return (
             <header className="page-header">
                 <div className="container pt-3 pb-1">
                     <div className="row align-items-center justify-content-center">
                         <div className="col-md-6 mt-5">
                             <h2>My portfolio website</h2>
-
-                            <p className="text-dark">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut orci cursus mauris eleifend rutrum. Suspendisse dictum eget orci sit amet lacinia. Nam elementum turpis vitae felis tempor, sit amet feugiat orci rhoncus. Donec ultricies ex in sapien eleifend, vitae bibendum nulla sodales. Mauris pellentesque, massa quis ullamcorper cursus, est justo commodo ligula, pulvinar fringilla justo orci eu magna.
-
-                            </p>
+                            {headerInfo 
+                                ?
+                                (
+                                    <p className="text-dark">
+                                        {headerInfo}
+                                    </p>
+                                )
+                                : null
+                            }
 
                         </div>
                         <div className="col-md-6 text-center">

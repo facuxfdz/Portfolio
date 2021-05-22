@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import axiosClient from '../config/axios';
 
 const Projects = () => {
-    
+
     const [projectsData,handleProjectsData] = useState([]);
 
     const bringGitInfo = async () => {
@@ -40,7 +40,7 @@ const Projects = () => {
                                         <Carousel.Item key={project.id}>
                                         <a href={`${project.html_url}`} target="_blank" className="link-success-violet-background"> 
                                         <img className="mx-3 my-2" src="GitHub-Mark-64px.png" />
-                                        {project.url} 
+                                        {project.name} 
                                         </a>
                                          {project.description 
                                             ? (<p className="my-2"> {project.description} </p>)

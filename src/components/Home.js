@@ -24,7 +24,6 @@ const Home = () => {
 
     },[]);
 
-
     
     const bringAboutData = () => {
         let className = "about gradient";
@@ -151,19 +150,7 @@ const Home = () => {
 
         return {className,title,universityData,passedSubjects,inProgressSubjects};
     }
-
-    // useEffect(() => {
-    //     handleAboutData(bringAboutData());
-    //     handleProjectsData(bringProjectsData());
-    //     handleFormation(bringFormationData());
-
-    // }, []);
-
-
-
     
-
-
     return (
         <Fragment>
             <NavBar />

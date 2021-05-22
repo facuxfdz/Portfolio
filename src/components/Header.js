@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
 const Header = () => {
+    
     return (
             <header className="page-header">
                 <div className="container pt-3 pb-1">

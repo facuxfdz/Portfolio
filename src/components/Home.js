@@ -11,12 +11,21 @@ const loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pro
 
 const Home = () => {
     
+    
+    
     // This data will come from some page, the idea is that this information could be updated dynamically
     
     const [aboutData,handleAboutData] = useState({});
-    const [projectsData,handleProjectsData] = useState({});
     const [formationData,handleFormation] = useState({});
+    
+    useEffect(() => {
+        handleFormation(bringFormationData());
+        handleAboutData(bringAboutData());
 
+    },[]);
+
+
+    
     const bringAboutData = () => {
         let className = "about gradient";
         let title = "About me";
@@ -24,16 +33,6 @@ const Home = () => {
         return {className,title,description};
     };
 
-    const bringProjectsData = () => {
-        let className = "projects gradient";
-        let title = "Projects";
-        let description = "These are my personal projects";
-        let projects = [
-            {"url": "https://github.com/facuxfdz/redux-CRUD", "index": 1},
-            {"url": "https://github.facuxfdzPet-Lost-Server", "index": 2},
-        ]; 
-        return {className,title,description,projects};
-    };
 
     const bringFormationData = () => {
         let className = "formation";
@@ -153,12 +152,14 @@ const Home = () => {
         return {className,title,universityData,passedSubjects,inProgressSubjects};
     }
 
-    useEffect(() => {
-        handleAboutData(bringAboutData());
-        handleProjectsData(bringProjectsData());
-        handleFormation(bringFormationData());
+    // useEffect(() => {
+    //     handleAboutData(bringAboutData());
+    //     handleProjectsData(bringProjectsData());
+    //     handleFormation(bringFormationData());
 
-    }, []);
+    // }, []);
+
+
 
     
 
@@ -169,7 +170,7 @@ const Home = () => {
             <Header/>
             <About aboutData={aboutData}/>
             <Formation formationData={formationData}/>
-            <Projects projectsData={projectsData}/>
+            <Projects />
             <Footer />
             <ScrollTop />
         </Fragment>

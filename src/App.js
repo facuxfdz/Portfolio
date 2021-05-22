@@ -1,10 +1,11 @@
-import React, {Suspense} from 'react';
+import React, {Suspense, useEffect,useState} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Loader from './components/Loader';
 import LazyForm from './components/LazyForm';
 import Home from './components/Home';
 
 function App() {
+
   return (
     <Router>
         <Suspense fallback={<Loader />}>
